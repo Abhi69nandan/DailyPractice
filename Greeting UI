@@ -1,0 +1,25 @@
+# Greeting UI
+import tkinter as tk
+from tkinter import messagebox
+
+def say_hello():
+    name = name_entry.get()
+    if name:
+        messagebox.showinfo("Greeting", f"Hello, {name}!")
+    else:
+        messagebox.showwarning("Input Error", "Please enter your name.")
+
+root = tk.Tk()
+root.title("Simple Tkinter GUI")
+root.geometry("300x150")
+
+label = tk.Label(root, text="Enter your name:")
+label.pack(pady=5)
+
+name_entry = tk.Entry(root, width=30)
+name_entry.pack(pady=5)
+
+greet_button = tk.Button(root, text="Greet", command=say_hello)
+greet_button.pack(pady=10)
+
+root.mainloop()
